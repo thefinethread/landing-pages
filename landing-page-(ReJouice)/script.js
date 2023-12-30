@@ -33,29 +33,46 @@ gsap.from('#section-1 .heading span', {
   stagger: 0.08,
 });
 
+// section-2 top text
+document.querySelectorAll('#section-2 .top span').forEach((span) => {
+  gsap.from(span, {
+    y: 50,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.02,
+    ease: 'Power4.out',
+    scrollTrigger: {
+      trigger: '#section-2 .top',
+      scrub: false,
+      toggleActions: 'restart none restart reverse',
+    },
+  });
+});
+
+gsap.to('#section-2 .divider', {
+  width: '100%',
+  duration: 0.8,
+  scrollTrigger: {
+    trigger: '#section-2 .divider',
+    scrub: false,
+    toggleActions: 'restart none restart reverse',
+  },
+});
+
 // section-2 main text animation
 spans.forEach((span) => {
-  gsap.fromTo(
-    span,
-    {
-      y: 50,
-      opacity: 0,
+  gsap.from(span, {
+    y: '100%',
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.02,
+    ease: 'Power4.out',
+    scrollTrigger: {
+      trigger: '#section-2 .content',
+      scrub: false,
+      toggleActions: 'restart none restart reverse',
     },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.02,
-      delay: 0.4,
-      ease: 'Power4.out',
-      scrollTrigger: {
-        trigger: '#section-2 .content',
-        scrub: false,
-        markers: true,
-        toggleActions: 'restart none restart reverse',
-      },
-    }
-  );
+  });
 });
 
 section1.addEventListener('mousemove', followMouse);
