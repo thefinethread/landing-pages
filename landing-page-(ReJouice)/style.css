@@ -80,8 +80,6 @@ html {
   font-weight: 100;
   color: #fffcf1;
 }
-.main #section-1 .heading span {
-}
 
 .main #section-1 .cursor {
   height: 7.5vw;
@@ -96,40 +94,40 @@ html {
   transform: translate(-50%, -50%);
 }
 
-#section-2 {
+.large-txt-animation-section {
   height: 100vh;
   color: #111;
   font-family: nb;
   width: 100%;
-  padding: 3vw;
+  padding-inline: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#section-2 p {
+.large-txt-animation-section p {
   overflow-y: hidden;
 }
 
-#section-2 .divider {
+.large-txt-animation-section .divider {
   width: 0%;
   height: 0.5px;
   background-color: #111;
 }
-#section-2 .top {
-  padding-top: 5vw;
+.large-txt-animation-section .top {
   font-size: 1.6vw;
-  height: 16%;
   display: flex;
   align-items: end;
   justify-content: space-between;
   padding-bottom: 1vw;
 }
 
-#section-2 .top div:first-child {
+.large-txt-animation-section .top div:first-child {
   display: flex;
   flex-direction: column;
 }
 
-#section-2 .content {
-  height: 84%;
+.large-txt-animation-section .content {
   font-size: 4.1vw;
   line-height: 1.18;
   display: inline-block;
@@ -284,4 +282,13 @@ html {
 
 #section-4 .bottom > div:hover video {
   visibility: visible;
+}
+
+#section-5 {
+  height: 100vh;
+}
+
+#section-6 {
+  height: 100vh;
+  background-color: aqua;
 }
