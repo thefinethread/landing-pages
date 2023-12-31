@@ -290,5 +290,38 @@ html {
 
 #section-6 {
   height: 100vh;
-  background-color: aqua;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+#section-6 video {
+  height: 150%;
+  width: 150%;
+}
+
+#section-6 > svg {
+  position: absolute;
+  width: 30rem;
+}
+
+#section-6 .text {
+  position: absolute;
+  flex-direction: column;
+}
+
+#section-6 .text > div {
+  font-size: 3.8rem;
+  overflow-y: hidden;
+  height: 72px;
+}
+
+#section-6 .text .txt-animate {
+  transform: translateY(40%);
+}
+
+#section-7 {
+  height: 100vh;
+  background-color: #ff5f38;
 }

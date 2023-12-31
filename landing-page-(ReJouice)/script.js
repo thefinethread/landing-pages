@@ -106,6 +106,21 @@ document.querySelectorAll('#section-3 .bottom p').forEach((p) => {
   });
 });
 
+// section-5
+gsap.to('.txt-animate', {
+  translateY: '-40%',
+  duration: 2.2,
+  delay: 0.1,
+  ease: 'Power4.inOut',
+  scrollTrigger: {
+    trigger: '.txt-animate',
+    scrub: false,
+    start: '30% bottom',
+    end: '60% top',
+    toggleActions: 'restart none restart reset',
+  },
+});
+
 section1.addEventListener('mousemove', followMouse);
 section1.addEventListener('mouseleave', removeCursorEffect);
 section1.addEventListener('mouseenter', addCursorEffect);
