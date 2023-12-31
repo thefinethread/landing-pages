@@ -31,6 +31,13 @@ html {
   width: 100%;
 }
 
+section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .main {
   height: 100%;
   width: 100%;
@@ -38,21 +45,14 @@ html {
   background-color: #faf8f3;
 }
 
-.main #section-1 {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.main #section-1 video {
+#section-1 video {
   height: 100%;
   width: 100%;
   object-fit: cover;
   position: absolute;
   overflow: hidden;
 }
-.main #section-1 .content {
+#section-1 .content {
   height: 100vh;
   width: 100%;
   position: relative;
@@ -63,7 +63,7 @@ html {
   z-index: 3;
 }
 
-.main #section-1 nav {
+#section-1 nav {
   height: 100vh;
   width: 100%;
   position: relative;
@@ -72,7 +72,7 @@ html {
   font-size: 1.4vw;
 }
 
-.main #section-1 .heading {
+#section-1 .heading {
   text-align: center;
   font-family: rejouice;
   font-size: 27vw;
@@ -81,23 +81,9 @@ html {
   color: #fffcf1;
 }
 
-/* .main #section-1 .cursor {
-  height: 7.5vw;
-  width: 7.5vw;
-  border-radius: 50%;
-  background-color: #ff5f38;
-  color: #111;
-  position: fixed;
-  z-index: 2;
-  font-size: 1vw;
-  font-weight: 600;
-  transform: translate(-50%, -50%); }*/
-
 .large-txt-animation-section {
-  height: 100vh;
   color: #111;
   font-family: nb;
-  width: 100%;
   padding-inline: 3vw;
   display: flex;
   flex-direction: column;
@@ -134,7 +120,6 @@ html {
 }
 
 #section-3 {
-  height: 100vh;
   color: #111;
   flex-direction: column;
   gap: 1rem;
@@ -205,7 +190,6 @@ html {
 }
 
 #section-4 {
-  height: 100vh;
   padding: 0.8vw 2.7vw;
 }
 
@@ -283,27 +267,21 @@ html {
   visibility: visible;
 }
 
-#section-5 {
-  height: 100vh;
-}
-
 #section-6 {
-  height: 100vh;
-  position: relative;
+  overflow: visible;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  overflow: hidden;
 }
 
 #section-6 video {
-  height: 150%;
-  width: 150%;
+  height: 110%;
+  width: 110%;
 }
 
 #section-6 > svg {
   position: absolute;
-  width: 30rem;
+  width: 24rem;
 }
 
 #section-6 .text {
@@ -319,11 +297,6 @@ html {
 
 #section-6 .text .txt-animate {
   transform: translateY(40%);
-}
-
-#section-7 {
-  height: 100vh;
-  background-color: #ff5f38;
 }
 
 .circle {
