@@ -275,13 +275,12 @@ section {
 }
 
 #section-6 video {
-  height: 110%;
-  width: 110%;
+  width: 65%;
 }
 
 #section-6 > svg {
   position: absolute;
-  width: 24rem;
+  width: 30rem;
 }
 
 #section-6 .text {
