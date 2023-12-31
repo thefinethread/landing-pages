@@ -4,6 +4,16 @@ const section1 = document.querySelector('#section-1');
 const heading = document.querySelector('.heading');
 const spans = document.querySelectorAll('#section-2 .content span');
 
+const lenis = new Lenis();
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
 const followMouse = (e) => {
   gsap.to(cursor, {
     x: e.x,
@@ -40,6 +50,7 @@ document.querySelectorAll('#section-2 .top span').forEach((span) => {
     opacity: 0,
     duration: 0.5,
     stagger: 0.02,
+    delay: 0.2,
     ease: 'Power4.out',
     scrollTrigger: {
       trigger: '#section-2 .top',
@@ -51,6 +62,7 @@ document.querySelectorAll('#section-2 .top span').forEach((span) => {
 
 gsap.to('#section-2 .divider', {
   width: '100%',
+  delay: 0.2,
   duration: 0.8,
   scrollTrigger: {
     trigger: '#section-2 .divider',
@@ -64,11 +76,30 @@ spans.forEach((span) => {
   gsap.from(span, {
     y: '100%',
     opacity: 0,
-    duration: 0.5,
+    delay: 0.2,
+    duration: 0.6,
     stagger: 0.02,
     ease: 'Power4.out',
     scrollTrigger: {
       trigger: '#section-2 .content',
+      scrub: false,
+      toggleActions: 'restart none restart reverse',
+    },
+  });
+});
+
+// section-3
+document.querySelectorAll('#section-3 .bottom p').forEach((p) => {
+  gsap.from(p, {
+    y: '100%',
+    opacity: 0,
+    delay: 0.2,
+    duration: 0.6,
+    stagger: 0.02,
+    scrollTrigger: {
+      trigger: '#section-3 .bottom',
+      markers: true,
+      start: 'top bottom',
       scrub: false,
       toggleActions: 'restart none restart reverse',
     },
