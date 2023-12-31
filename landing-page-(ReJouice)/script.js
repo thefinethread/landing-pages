@@ -98,7 +98,6 @@ document.querySelectorAll('#section-3 .bottom p').forEach((p) => {
     stagger: 0.02,
     scrollTrigger: {
       trigger: '#section-3 .bottom',
-      markers: true,
       start: 'top bottom',
       scrub: false,
       toggleActions: 'restart none restart reverse',
