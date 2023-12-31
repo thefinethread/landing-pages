@@ -1,9 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
-const cursor = document.querySelector('.cursor');
-const section1 = document.querySelector('#section-1');
 const heading = document.querySelector('.heading');
 const spans = document.querySelectorAll('#section-2 .content span');
 const sections = document.querySelectorAll('.large-txt-animation-section');
+const circleContainers = document.querySelectorAll('.circle-container');
 
 const lenis = new Lenis();
 
@@ -121,6 +120,45 @@ gsap.to('.txt-animate', {
   },
 });
 
-section1.addEventListener('mousemove', followMouse);
-section1.addEventListener('mouseleave', removeCursorEffect);
-section1.addEventListener('mouseenter', addCursorEffect);
+// circle animation
+
+const moveCircle = (e) => {
+  const container = e.currentTarget;
+  const boundingRect = container.getBoundingClientRect();
+  // clientY gives distance from top of the global viewPort in px
+  // and boundingRect.top gives the distance of top of our section from global viewport
+  // so if we subtract then we will get the distance of our cursor wrt our section's viewport
+  // and this we need in y in gsap
+
+  const mouseX = e.clientX - boundingRect.left;
+  const mouseY = e.clientY - boundingRect.top;
+
+  gsap.to(container.querySelector('.circle'), {
+    opacity: 1,
+    duration: 0.5,
+    x: mouseX,
+    y: mouseY,
+  });
+};
+
+const collapseCircle = (e) => {
+  const container = e.currentTarget;
+  gsap.to(container.querySelector('.circle'), {
+    scale: 0,
+    opacity: 0,
+  });
+};
+
+const scaleUpCircle = (e) => {
+  const container = e.currentTarget;
+  gsap.to(container.querySelector('.circle'), {
+    scale: 1,
+    opacity: 1,
+  });
+};
+
+circleContainers.forEach((container) => {
+  container.addEventListener('mousemove', moveCircle);
+  container.addEventListener('mouseleave', collapseCircle);
+  container.addEventListener('mouseenter', scaleUpCircle);
+});

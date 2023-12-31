@@ -81,7 +81,7 @@ html {
   color: #fffcf1;
 }
 
-.main #section-1 .cursor {
+/* .main #section-1 .cursor {
   height: 7.5vw;
   width: 7.5vw;
   border-radius: 50%;
@@ -91,8 +91,7 @@ html {
   z-index: 2;
   font-size: 1vw;
   font-weight: 600;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(-50%, -50%); }*/
 
 .large-txt-animation-section {
   height: 100vh;
@@ -294,6 +293,7 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
+  overflow: hidden;
 }
 
 #section-6 video {
@@ -324,4 +324,25 @@ html {
 #section-7 {
   height: 100vh;
   background-color: #ff5f38;
+}
+
+.circle {
+  opacity: 0;
+  left: 0;
+  top: 0;
+  height: 7.5vw;
+  width: 7.5vw;
+  border-radius: 50%;
+  background-color: #030303;
+  color: #eae8e3;
+  position: absolute;
+  font-size: 1vw;
+  font-weight: 600;
+  transform: translate(-50%, -50%);
+}
+
+#section-1 .circle {
+  background-color: #ff5f38;
+  color: #111;
+  z-index: 1;
 }
