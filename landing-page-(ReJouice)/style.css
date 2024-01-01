@@ -53,7 +53,7 @@ section {
   height: 100%;
   width: 100%;
   color: #111;
-  background-color: #eae8e3;
+  background-color: #fffcf1;
 }
 
 #section-1 video {
@@ -64,10 +64,11 @@ section {
   overflow: hidden;
 }
 #section-1 .content {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  left: 0;
+  top: 0;
   position: relative;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2.5vw 3vw 0 3vw;
@@ -87,8 +88,8 @@ section {
 #section-1 .heading {
   text-align: center;
   font-family: rejouice;
-  font-size: 27vw;
-  line-height: 27vw;
+  font-size: 26vw;
+  line-height: 2.1;
   font-weight: 100;
   color: #fffcf1;
 }
@@ -162,6 +163,7 @@ section {
 }
 
 .large-text-underline-section .bottom p {
+  cursor: pointer;
   width: fit-content;
   font-weight: 200;
   text-align: center;
@@ -377,11 +379,9 @@ section {
 .swiper-wrapper {
   display: flex;
   align-items: end;
-  /* justify-content: space-between; */
 }
 
 #section-8 img {
-  /* overflow: visible; */
   width: 100%;
   object-fit: cover;
   height: fit-content;
@@ -468,9 +468,7 @@ button:hover {
 }
 
 #section-10 .heading {
-  /* font-family: rejouice;
-  font-size: 26vw;
-  line-height: 0.8; */
+  color: #faf8f3;
   overflow-y: hidden;
 }
 
@@ -488,5 +486,4 @@ button:hover {
   font-size: 1.2rem;
   width: 100%;
   position: fixed;
-  /* z-index: 100; */
 }

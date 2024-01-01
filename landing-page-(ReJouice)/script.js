@@ -53,7 +53,9 @@ tl.to('.main', {
 //*****************************************************************************
 
 // rejouice main heading animation  *******************************************
-tl.from('#section-1 .heading span', {
+new SplitType('#section-1 .heading');
+
+tl.from('#section-1 .char', {
   delay: -0.5,
   y: '100%',
   opacity: 0,
@@ -198,9 +200,8 @@ const swiper = new Swiper('.swiper', {
 
 const chars = new SplitType('#section-10 .heading div');
 
-gsap.from('.char', {
+gsap.from('#section-10 .char', {
   y: '-100%',
-  delay: 0.1,
   duration: 1,
   stagger: 0.04,
   ease: 'Power4.inOut',
