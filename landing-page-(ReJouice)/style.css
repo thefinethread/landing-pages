@@ -38,6 +38,7 @@ html {
   font-family: nb;
   height: auto;
   width: 100%;
+  background-color: #111;
 }
 
 section {
@@ -48,10 +49,11 @@ section {
 }
 
 .main {
+  opacity: 0;
   height: 100%;
   width: 100%;
   color: #111;
-  background-color: #faf8f3;
+  background-color: #eae8e3;
 }
 
 #section-1 video {
@@ -70,7 +72,7 @@ section {
   justify-content: space-between;
   padding: 2.5vw 3vw 0 3vw;
   z-index: 3;
-  color: #eae8e3;
+  color: #faf8f3;
 }
 
 #section-1 nav {
@@ -477,4 +479,14 @@ button:hover {
   font-size: 27vw;
   line-height: 1;
   display: inline;
+}
+
+.welcome-page {
+  height: 100vh;
+  background-color: #111;
+  color: #eae8e3;
+  font-size: 1.2rem;
+  width: 100%;
+  position: fixed;
+  /* z-index: 100; */
 }

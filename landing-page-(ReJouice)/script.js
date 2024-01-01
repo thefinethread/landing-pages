@@ -7,6 +7,9 @@ const largeTextUnderlineSections = document.querySelectorAll(
   '.large-text-underline-section'
 );
 
+const tl = gsap.timeline();
+
+//lenis scroll trigger  *****************************************************
 const lenis = new Lenis();
 
 lenis.on('scroll', ScrollTrigger.update);
@@ -17,30 +20,41 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
-const followMouse = (e) => {
-  gsap.to(cursor, {
-    x: e.x,
-    y: e.y,
-  });
-};
+//*****************************************************************************
 
-const removeCursorEffect = () => {
-  gsap.to(cursor, {
-    opacity: 0,
-    scale: 0,
-  });
-};
+// welcome page animation   ***************************************************
+const words = new SplitType('.welcome-page p');
 
-const addCursorEffect = () => {
-  gsap.to(cursor, {
-    opacity: 1,
-    scale: 1,
-  });
-};
+tl.from('.word', {
+  x: 50,
+  duration: 1,
+  stagger: 0.1,
+  opacity: 0,
+});
 
-// rejouice main heading animation
-gsap.from('#section-1 .heading span', {
-  delay: 0.2,
+tl.to('.word', {
+  delay: 0.4,
+  x: -50,
+  duration: 1,
+  stagger: 0.1,
+  opacity: 0,
+});
+
+tl.to('.welcome-page', {
+  opacity: 0,
+  duration: 0.8,
+});
+
+tl.to('.main', {
+  opacity: 1,
+  delay: -1,
+});
+
+//*****************************************************************************
+
+// rejouice main heading animation  *******************************************
+tl.from('#section-1 .heading span', {
+  delay: -0.5,
   y: '100%',
   opacity: 0,
   stagger: 0.08,
@@ -180,6 +194,8 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+// footer heading animation **********************************
+
 const chars = new SplitType('#section-10 .heading div');
 
 gsap.from('.char', {
@@ -200,7 +216,6 @@ gsap.from('#section-10 .top', {
   y: '-100%',
   scrollTrigger: {
     trigger: '#section-10 .top',
-    markers: true,
     scrub: true,
   },
 });
