@@ -220,3 +220,66 @@ gsap.from('#section-10 .top', {
     scrub: true,
   },
 });
+
+/* menu styling ***********************************/
+const menuBtn = document.querySelector('.menu-btn');
+const menuPage = document.querySelector('.menu-page');
+const closeBtn = document.querySelector('.close-btn');
+
+const openMenuPage = () => {
+  const tl = gsap.timeline();
+
+  tl.to(menuPage, {
+    y: '0',
+    duration: 0.8,
+    ease: 'Power4.inOut',
+  });
+
+  tl.from('.menu-page video', {
+    delay: -0.2,
+    scale: 0,
+    duration: 0.8,
+  });
+
+  tl.from('.menu-page .second li', {
+    delay: -0.2,
+    y: '100%',
+    duration: 0.6,
+    opacity: 0,
+    stagger: 0.1,
+  });
+
+  tl.from('.menu-page .third ', {
+    delay: -0.3,
+    y: '100%',
+    duration: 0.5,
+    opacity: 0,
+  });
+
+  tl.from('.menu-page .bottom li', {
+    delay: -0.5,
+    x: 50,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.1,
+  });
+  tl.from('.menu-page .bottom p', {
+    delay: -0.5,
+    x: 50,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.1,
+  });
+};
+
+const closeMenu = () => {
+  gsap.to(menuPage, {
+    y: '-100%',
+    duration: 0.8,
+    ease: 'Power4.inOut',
+  });
+};
+
+closeBtn.addEventListener('click', closeMenu);
+window.addEventListener('scroll', closeMenu);
+menuBtn.addEventListener('click', openMenuPage);
