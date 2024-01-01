@@ -162,3 +162,15 @@ circleContainers.forEach((container) => {
   container.addEventListener('mouseleave', collapseCircle);
   container.addEventListener('mouseenter', scaleUpCircle);
 });
+
+// swiper js
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 4,
+  spaceBetween: 14,
+  loop: true,
+  autoplay: true,
+  freeMode: {
+    enabled: true,
+    momentumVelocityRatio: 1,
+  },
+});
