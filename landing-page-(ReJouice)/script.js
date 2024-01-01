@@ -3,6 +3,9 @@ const heading = document.querySelector('.heading');
 const spans = document.querySelectorAll('#section-2 .content span');
 const sections = document.querySelectorAll('.large-txt-animation-section');
 const circleContainers = document.querySelectorAll('.circle-container');
+const largeTextUnderlineSections = document.querySelectorAll(
+  '.large-text-underline-section'
+);
 
 const lenis = new Lenis();
 
@@ -89,19 +92,21 @@ sections.forEach((section) => {
 });
 
 // section-3
-document.querySelectorAll('#section-3 .bottom p').forEach((p) => {
-  gsap.from(p, {
-    y: '100%',
-    opacity: 0,
-    delay: 0.2,
-    duration: 0.6,
-    stagger: 0.02,
-    scrollTrigger: {
-      trigger: '#section-3 .bottom',
-      start: 'top bottom',
-      scrub: false,
-      toggleActions: 'restart none restart reverse',
-    },
+largeTextUnderlineSections.forEach((section) => {
+  section.querySelectorAll('.bottom p').forEach((p) => {
+    gsap.from(p, {
+      y: '100%',
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.6,
+      stagger: 0.02,
+      scrollTrigger: {
+        trigger: section.querySelector('.bottom'),
+        start: 'top bottom',
+        scrub: false,
+        toggleActions: 'restart none restart reverse',
+      },
+    });
   });
 });
 
@@ -172,5 +177,30 @@ const swiper = new Swiper('.swiper', {
   freeMode: {
     enabled: true,
     momentumVelocityRatio: 1,
+  },
+});
+
+const chars = new SplitType('#section-10 .heading div');
+
+gsap.from('.char', {
+  y: '-100%',
+  delay: 0.1,
+  duration: 1,
+  stagger: 0.04,
+  ease: 'Power4.inOut',
+  scrollTrigger: {
+    trigger: '#section-10 .heading',
+    scrub: false,
+    toggleActions: 'restart none none none',
+  },
+});
+
+gsap.from('#section-10 .top', {
+  opacity: 0,
+  y: '-100%',
+  scrollTrigger: {
+    trigger: '#section-10 .top',
+    markers: true,
+    scrub: true,
   },
 });
